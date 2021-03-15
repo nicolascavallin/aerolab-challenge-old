@@ -43,11 +43,11 @@ const ProductsGrid: FC = () => {
     const onBackPage = () => setPage( page - 1 )
 
     return (
-        <Box>
+        <Box maxW='6xl'>
 
-            <Flex align='center' borderBottomWidth={ 1 } maxW='6xl' px={ 8 } pb={ 4 } borderBottomColor='#D9D9D9'>
+            <Flex align='center' borderBottomWidth={ 1 } maxW='6xl' px={ 8 } pb={ 4 } borderBottomColor='#D9D9D9' direction={[ 'column', 'column', 'row' ]}>
                 <Text>{ (( page + 1 ) * maxProductsPerPage < productsHook.products.length) ? ( page + 1 ) * maxProductsPerPage : productsHook.products.length } of { productsHook.products.length } products</Text>
-                <Box w='1px' h='30px' bg='#D9D9D9' mx={ 4 }></Box>
+                <Box w='1px' h={[ '0px', '0px', '30px']} bg='#D9D9D9' mx={ 4 }></Box>
                 <Text mr={ 2 }>Sort by:</Text>
                 <ButtonGroup size='sm'>
                     <Button 
