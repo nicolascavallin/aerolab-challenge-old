@@ -37,7 +37,6 @@ const ProductCard: FC<Props> = ({ product, userWallet }) => {
                 if( res.status === 200 ){
                     toast({ status: 'success', description: `You've redeem the product successfully` }) 
                     session.updatePoints( product.cost * (-1) )
-                    session.updateHistory()
                 } else {
                     toast({ status: 'error', description: 'Well... Something went wrong, try again.' }) 
                 }

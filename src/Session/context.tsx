@@ -24,12 +24,12 @@ const SessionProvider: FC = ({ children }) => {
         
     }, [])
 
-    const updatePoints = ( amount: number ) => setUser({ ...user, points: user.points + amount })
-
-    const updateHistory = () => {
-        // no está actualizando 🥴
-        api.history.then( res => setHistory( [ ...res ].reverse() ) )
+    const updatePoints = ( amount: number ) => {
+        setUser({ ...user, points: user.points + amount })
+        updateHistory()
     }
+
+    const updateHistory = () => api.history().then( res => setHistory( [ ...res ].reverse() ) )
 
     if( status === 'loading' ) return <Center><p>Loading</p></Center>
 

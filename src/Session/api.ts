@@ -34,7 +34,7 @@ export default {
             },
         ),
 
-    history: fetch(
+    history: () => fetch(
         'https://coding-challenge-api.aerolab.co/user/history', {
             headers: {
                 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDM4ZmE0MzdlNzE4NzAwMjBlMzhmMjkiLCJpYXQiOjE2MTQzNDY4MTl9.pgFKiyo1e4MPe7kOyKwh4MEsoCQyMWHLiYWn9jZ1T1Y',
